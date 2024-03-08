@@ -514,6 +514,7 @@ PROJECTS
 .project__img {
     width: 100%;
     transition: all 600ms ease;
+    object-fit: cover;
 }
 
 .project:hover .project__img {

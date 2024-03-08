@@ -37,7 +37,7 @@ function contact(event) {
 
     emailjs
         .sendForm(
-            'service_u2ww5kf',
+            'service_bbjze07',
             'template_9m8b3b2',
             event.target,
             '9g6ZJfQqCtA74wxMi'
