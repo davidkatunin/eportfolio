@@ -395,6 +395,11 @@ nav {
     width: 100%;
 }
 
+.scala--img {
+    width: 75%;
+    height: 75px;
+}
+
 .modal__contact {
     background-color: #242424;
     color: white;
@@ -715,6 +720,11 @@ footer {
     .modal__half {
         width: 100%;
     }
+
+    .scala--img {
+        width: 80%;
+        height: 120px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -747,5 +757,10 @@ footer {
 
     .modal__half {
         padding: 40px;
+    }
+
+    .scala--img {
+        width: 80%;
+        height: 49px;
     }
 }
