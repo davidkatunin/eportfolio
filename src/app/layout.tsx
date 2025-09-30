@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Anton } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+import { impact } from "../../public/fonts";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -7,16 +8,12 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const antonSans = Anton({
-  weight: "400",
-  variable: "--font-anton-sans",
-  subsets: ["latin"],
-});
-
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const impactFont = impact;
 
 export const metadata: Metadata = {
   title: "David Katunin",
@@ -31,7 +28,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${antonSans.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${impactFont.variable} antialiased`}
+        suppressHydrationWarning={true}
       >
         {children}
       </body>

@@ -1,32 +1,26 @@
 "use client";
 
-import CurvedLoop from "@/components/CurvedLoop";
- 
+import NameLoop from "@/components/NameLoop";
+import Navbar from "@/components/Navbar";
+
 export default function Home() {
   return (
-    <div className="w-full min-h-screen bg-[#d9d5d2]">
-      <nav className="sticky top-0 z-50 bg-[#d9d5d2] border-b border-gray-300">
-        <div className="flex flex-row justify-between px-16 py-2 font-[Anton] items-center">
-          <div className="flex flex-col">
-            <p>David</p>
-            <p>Katunin</p>
-          </div>
-          <div className="flex flex-row justify-between">
-            Links!
-          </div>
+    <div className="w-full min-h-screen overflow-x-hidden relative" style={{
+      backgroundColor: '#d9d5d2',
+      backgroundImage: `
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")
+      `,
+      backgroundSize: '200px 200px',
+      backgroundBlendMode: 'overlay'
+    }}>
+      <Navbar />
+      <section className="relative flex flex-col justify-between items-center h-[100vh]">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img src="/portrait.PNG" alt="Portrait of David Katunin" className="w-full h-full object-cover object-[center_20%] origin-top scale-[1.03] translate-y-[8%] sm:translate-y-[5%] sm:object-contain sm:origin-center sm:scale-100 sm:object-center sm:-translate-x-[20%]"/>
         </div>
-      </nav>
-      <section className="flex flex-col justify-center items-center">
-        <div className="text-center mb-8">
-          <div className="text-xl mb-4">Picture with my name and countries and software developer</div>
+        <div className="absolute bottom-0 left-0 z-10 w-full pb-20 sm:pb-0">
+          <NameLoop />
         </div>
-        <CurvedLoop 
-          marqueeText="David Katunin 🇱🇹 🇺🇸"
-          speed={2.5}
-          curveAmount={0}
-          interactive={false}
-          className="text-[15rem] font-anton"
-        />
       </section>
       <section className="h-screen bg-white">
         <div className="h-full flex items-center justify-center">

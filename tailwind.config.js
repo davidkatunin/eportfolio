@@ -68,7 +68,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'sans-serif'],
         mono: ['var(--font-geist-mono)', 'monospace'],
-        anton: ['var(--font-anton-sans)', 'sans-serif'],
+        impact: ['var(--font-impact)', 'sans-serif'],
       },
     },
   },
