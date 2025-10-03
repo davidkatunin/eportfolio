@@ -2,6 +2,7 @@
 
 import NameLoop from "@/components/NameLoop";
 import Navbar from "@/components/Navbar";
+import ScrollDownArrow from "@/components/ScrollDownArrow";
 
 export default function Home() {
   return (
@@ -21,10 +22,29 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 z-10 w-full pb-20 sm:pb-0">
           <NameLoop />
         </div>
+        <ScrollDownArrow />
       </section>
-      <section className="h-screen bg-white">
-        <div className="h-full flex items-center justify-center">
-          <p className="text-2xl">Scroll down to see more content...</p>
+      <section className=" bg-white">
+        <div className="flex flex-col items-center justify-top px-48 py-24">
+          <div className="flex flex-col gap-4">
+            <h1 className="text-4xl font-bold">About Me</h1>
+            <div className="w-24 h-1 bg-gray-900 mx-auto mb-8"></div>
+          </div>
+          <div className="flex flex-row w-1/2 justify-between gap-10">
+            <p className="text-lg w-1/">
+              I am a software engineer with a passion for creating beautiful and functional web applications. I am a quick learner and I am always looking to improve my skills.
+              I am currently working as a software engineer at a startup called "The Box" where I am responsible for the development of the company's website and the company's mobile app.
+            </p>
+            <div className="flex flex-col gap-4 w-1/2">
+              <h2 className="text-2xl font-bold">My Skills</h2>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </div>
