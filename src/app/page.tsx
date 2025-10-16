@@ -1,10 +1,22 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import NameLoop from "@/components/NameLoop";
 import Navbar from "@/components/Navbar";
 import ScrollDownArrow from "@/components/ScrollDownArrow";
+import WorldMap from "@/components/world-map";
+import { LaptopHouse } from "@/components/LaptopHouse";
+import { SpiralCalendar } from "@/components/SpiralCalendar";
+import { ContactSection } from "@/components/ContactSection";
+import ClientPerformanceMonitor from "@/components/ClientPerformanceMonitor";
+
 
 export default function Home() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   return (
     <div className="w-full min-h-screen overflow-x-hidden relative" style={{
       backgroundColor: '#d9d5d2',
@@ -24,28 +36,68 @@ export default function Home() {
         </div>
         <ScrollDownArrow />
       </section>
-      <section className=" bg-white">
-        <div className="flex flex-col items-center justify-top px-48 py-24">
-          <div className="flex flex-col gap-4">
-            <h1 className="text-4xl font-bold">About Me</h1>
-            <div className="w-24 h-1 bg-gray-900 mx-auto mb-8"></div>
-          </div>
-          <div className="flex flex-row w-1/2 justify-between gap-10">
-            <p className="text-lg w-1/">
-              I am a software engineer with a passion for creating beautiful and functional web applications. I am a quick learner and I am always looking to improve my skills.
-              I am currently working as a software engineer at a startup called "The Box" where I am responsible for the development of the company's website and the company's mobile app.
+      <section>
+        <div className="pt-24 bg-white w-full bg-gray-100">
+          <div className="max-w-7xl mx-auto text-center">
+            <p className="font-bold text-xl md:text-4xl text-black">
+              Where I've Worked
             </p>
-            <div className="flex flex-col gap-4 w-1/2">
-              <h2 className="text-2xl font-bold">My Skills</h2>
-              <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-              </ul>
+            <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
+            Each dot on this map represents more than just a destination—it's where I've worked, 
+            lived, and captured moments that tell the story of my career in software development and passion for photography.
+            </p>
+          </div>
+          <div>
+            <div className="w-4/5 bg-white rounded-lg relative font-sans mx-auto p-4">
+              <h3 className="text-sm font-semibold text-gray-800 mb-3">Legend</h3>
+              <div className="flex flex-wrap items-center gap-6">
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center justify-center w-5 h-5">
+                    <svg viewBox="0 0 20 20" className="w-4 h-4">
+                      <circle cx="10" cy="10" r="2" fill="red" />
+                      <circle cx="10" cy="10" r="2" fill="red" opacity="0.5">
+                        <animate attributeName="r" from="2" to="6" dur="1.5s" begin="0s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" from="0.5" to="0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+                      </circle>
+                    </svg>
+                  </div>
+                  <span className="text-xs text-gray-700">Current Location</span>
+                </div>
+                
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center justify-center w-5 h-5">
+                    <svg viewBox="0 0 20 20" className="w-4 h-4">
+                      <circle cx="10" cy="10" r="2" fill="green" />
+                      <circle cx="10" cy="10" r="2" fill="green" opacity="0.5">
+                        <animate attributeName="r" from="2" to="6" dur="1.5s" begin="0s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" from="0.5" to="0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+                      </circle>
+                    </svg>
+                  </div>
+                  <span className="text-xs text-gray-700">Past Work</span>
+                </div>
+                
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center justify-center w-5 h-5">
+                    <LaptopHouse className="text-blue-500 w-4 h-4" />
+                  </div>
+                  <span className="text-xs text-gray-700">Remote</span>
+                </div>
+                
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center justify-center w-5 h-5">
+                    <SpiralCalendar className="w-4 h-4" />
+                  </div>
+                  <span className="text-xs text-gray-700">Upcoming</span>
+                </div>
+              </div>
             </div>
+            <WorldMap />
           </div>
         </div>
+      </section>
+      <section>
+        <ContactSection />
       </section>
     </div>
   );

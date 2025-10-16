@@ -3,6 +3,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-display: swap;
+  text-rendering: optimizeSpeed;
+}
+
+/* GPU acceleration for animations */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: 'Impact';
+  src: url('/fonts/impact.ttf') format('truetype');
+  font-display: swap;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
