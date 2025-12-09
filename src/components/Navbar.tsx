@@ -3,6 +3,7 @@
 import StaggeredMenu from "@/components/StaggeredMenu";
 import { Code2, Camera, Home } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Link from 'next/link';
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -43,18 +44,18 @@ export default function Navbar() {
           DK
           <span className="text-[#00f5ff]">{'/>'}</span>
         </button>
-        <ul className="hidden lg:flex flex-row justify-between gap-8 lg:gap-12 text-lg lg:text-xl">
+        <ul className="hidden lg:flex flex-row justify-between gap-8 lg:gap-12 text-md lg:text-lg font-light">
           <li className={linkClasses("/")}>
-            <Home />
-            <a href="/">Home</a>
+            <Home className="w-5 h-5"/>
+            <Link href="/">Home</Link>
           </li>
           <li className={linkClasses("/swe")}>
-            <Code2 />
-            <a href="/swe">Software Engineer</a>
+            <Code2 className="w-5 h-5"/>
+            <Link href="/swe">Software Engineer</Link>
           </li>
           <li className={linkClasses("/photography")}>
-            <Camera />
-            <a href="/photography">Photography</a>
+            <Camera className="w-5 h-5"/>
+            <Link href="/photography">Photography</Link>
           </li>
         </ul>
         <div className="lg:hidden">

@@ -31,7 +31,7 @@ export default function ScrollDownArrow() {
       onClick={scrollToNext}
     >
       <div className="flex flex-col items-center space-y-2 group">
-        <span className="text-black text-sm font-light tracking-wider">
+        <span className="text-[#00f5ff] text-sm font-light tracking-wider">
           Scroll
         </span>
         <div className="animate-bounce">
@@ -40,7 +40,7 @@ export default function ScrollDownArrow() {
             height="24" 
             viewBox="0 0 24 24" 
             fill="none" 
-            className="text-black group-hover:text-white transition-colors duration-300"
+            className="group-hover:text-white transition-colors duration-300"
           >
             <path 
               d="M7 10L12 15L17 10" 

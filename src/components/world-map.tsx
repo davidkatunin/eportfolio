@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useCallback, useMemo, useEffect } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import DottedMap from "dotted-map";
 import { LaptopHouse } from "./LaptopHouse";
 import { SpiralCalendar } from "./SpiralCalendar";
@@ -19,6 +19,11 @@ interface MapProps {
   }>;
   dotColor?: string;
 }
+
+const VIEWBOX_WIDTH = 800;
+const VIEWBOX_HEIGHT = 400;
+const TOOLTIP_WIDTH = 320; // px, matches max-w-sm
+const TOOLTIP_OFFSET = 12;
 
 const myDots = [
   {
@@ -68,11 +73,12 @@ const myDots = [
 
 export default function WorldMap({
   dots = myDots,
-  dotColor = "#0ea5e9",
 }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
+  const lastPointRef = useRef<{ x: number; y: number } | null>(null);
   const [hoveredDot, setHoveredDot] = useState<number | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const [tooltipSide, setTooltipSide] = useState<"right" | "left">("right");
   const [isClient, setIsClient] = useState(false);
   const [svgMap, setSvgMap] = useState<string>("");
 
@@ -82,61 +88,85 @@ export default function WorldMap({
     const map = new DottedMap({ height: 100, grid: "diagonal" });
     const mapSvg = map.getSVG({
       radius: .5,
-      color: "#d9d5d2", // map dots color
+      color: "#000", // map dots color
       shape: "circle",
-      backgroundColor: "white", // Background Color of map div
+      backgroundColor: "#050816", // Background Color of map div
     });
     setSvgMap(mapSvg);
   }, []);
 
   const projectPoint = (lat: number, lng: number) => {
-    const x = (lng + 180) * (800 / 360);
-    const y = (90 - lat) * (400 / 180);
+    const x = (lng + 180) * (VIEWBOX_WIDTH / 360);
+    const y = (90 - lat) * (VIEWBOX_HEIGHT / 180);
     return { x, y };
   };
 
-  const handleMouseEnter = useCallback((index: number, event: React.MouseEvent) => {
-    if (hoveredDot === index) return;
-    setHoveredDot(index);
+  const computePosition = useCallback((point: { x: number; y: number }) => {
     const containerRect = svgRef.current?.getBoundingClientRect();
-    if (containerRect) {
-      setTooltipPosition({
-        x: event.clientX - containerRect.left,
-        y: event.clientY - containerRect.top - 10
-      });
-    }
-  }, [hoveredDot]);
+    if (!containerRect) return null;
 
-  const handleMouseMove = useCallback((event: React.MouseEvent) => {
-    if (hoveredDot !== null) {
-      const containerRect = svgRef.current?.getBoundingClientRect();
-      if (containerRect) {
-        const newX = event.clientX - containerRect.left;
-        const newY = event.clientY - containerRect.top - 10;
-        
-        if (Math.abs(tooltipPosition.x - newX) > 5 || Math.abs(tooltipPosition.y - newY) > 5) {
-          setTooltipPosition({ x: newX, y: newY });
-        }
-      }
-    }
-  }, [hoveredDot, tooltipPosition]);
+    const scaleX = containerRect.width / VIEWBOX_WIDTH;
+    const scaleY = containerRect.height / VIEWBOX_HEIGHT;
+
+    return {
+      x: containerRect.left + point.x * scaleX,
+      y: containerRect.top + point.y * scaleY,
+    };
+  }, []);
+
+  const updateTooltipPosition = useCallback(() => {
+    if (hoveredDot === null || !lastPointRef.current) return;
+    const pos = computePosition(lastPointRef.current);
+    if (!pos) return;
+
+    const overflowsRight =
+      pos.x + TOOLTIP_OFFSET + TOOLTIP_WIDTH > (typeof window !== "undefined" ? window.innerWidth : 0);
+    const overflowsLeft =
+      pos.x - TOOLTIP_OFFSET - TOOLTIP_WIDTH < 0;
+
+    setTooltipSide(overflowsRight && !overflowsLeft ? "left" : "right");
+    setTooltipPosition(pos);
+  }, [hoveredDot, computePosition]);
+
+  const handleMouseEnter = useCallback(
+    (index: number, point: { x: number; y: number }) => {
+      lastPointRef.current = point;
+      setHoveredDot(index);
+      const pos = computePosition(point);
+      if (!pos) return;
+
+      const overflowsRight =
+        pos.x + TOOLTIP_OFFSET + TOOLTIP_WIDTH > (typeof window !== "undefined" ? window.innerWidth : 0);
+      const overflowsLeft =
+        pos.x - TOOLTIP_OFFSET - TOOLTIP_WIDTH < 0;
+
+      setTooltipSide(overflowsRight && !overflowsLeft ? "left" : "right");
+      setTooltipPosition(pos);
+    },
+    [computePosition]
+  );
 
   const handleMouseLeave = useCallback(() => {
     setHoveredDot(null);
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("resize", updateTooltipPosition);
+    return () => window.removeEventListener("resize", updateTooltipPosition);
+  }, [updateTooltipPosition]);
+
 
   // Show loading state until client-side rendering is complete
   if (!isClient || !svgMap) {
     return (
-      <div className="w-4/5 aspect-[2/1] bg-white rounded-lg relative font-sans mx-auto flex items-center justify-center">
+      <div className="w-full aspect-[2/1] bg-white rounded-b-lg relative font-sans mx-auto flex items-center justify-center">
         <div className="text-gray-500">Loading map...</div>
       </div>
     );
   }
 
   return (
-    <div className="w-4/5 aspect-[2/1] bg-white rounded-lg relative font-sans mx-auto">
+    <div className="w-full bg-white rounded-b-lg relative font-sans mx-auto overflow-visible">
       <img
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         className="h-full w-full pointer-events-none select-none rounded-2xl"
@@ -152,14 +182,13 @@ export default function WorldMap({
       >
         {dots.map((dot, i) => {
           const point = projectPoint(dot.lat, dot.lng);
-          const color = dot.color || dotColor;
+          const color = dot.color;
           
           return (
             <g 
               key={`dot-group-${i}`} 
               transform={`translate(${point.x}, ${point.y})`}
-              onMouseEnter={(e) => handleMouseEnter(i, e)}
-              onMouseMove={handleMouseMove}
+              onMouseEnter={() => handleMouseEnter(i, point)}
               onMouseLeave={handleMouseLeave}
               style={{ cursor: 'pointer' }}
             >
@@ -264,11 +293,14 @@ export default function WorldMap({
       
       {hoveredDot !== null && dots[hoveredDot]?.data && (
         <div
-          className="absolute bg-white border border-gray-200 rounded-lg shadow-lg p-3 max-w-xs z-10 pointer-events-none will-change-transform"
+          className="fixed bg-white border border-gray-200 rounded-lg shadow-lg p-3 max-w-sm z-50 pointer-events-none will-change-transform"
           style={{
             left: `${tooltipPosition.x}px`,
             top: `${tooltipPosition.y}px`,
-            transform: 'translateX(-50%)',
+            transform:
+              tooltipSide === "right"
+                ? `translate(${TOOLTIP_OFFSET}px, -50%)`
+                : `translate(calc(-100% - ${TOOLTIP_OFFSET}px), -50%)`,
             transition: 'none'
           }}
         >
