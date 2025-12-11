@@ -2,7 +2,6 @@
 
 import { useRef, useState, useCallback, useEffect } from "react";
 import DottedMap from "dotted-map";
-import { LaptopHouse } from "./LaptopHouse";
 import { SpiralCalendar } from "./SpiralCalendar";
 
 interface MapProps {
@@ -22,13 +21,13 @@ interface MapProps {
 
 const VIEWBOX_WIDTH = 800;
 const VIEWBOX_HEIGHT = 400;
-const TOOLTIP_WIDTH = 320; // px, matches max-w-sm
+const TOOLTIP_WIDTH = 320;
 const TOOLTIP_OFFSET = 12;
 
 const myDots = [
   {
-    lat: 44,
-    lng: -83,
+    lat: 38,
+    lng: -90,
     color: "red",
     icon: "circle",
     data: {
@@ -38,8 +37,8 @@ const myDots = [
     }
   },
   {
-    lat: 49,
-    lng: 24,
+    lat: 50,
+    lng: 26,
     color: "green",
     icon: "circle",
     data: {
@@ -50,7 +49,7 @@ const myDots = [
   },
   {
     lat: 23,
-    lng: 142,
+    lng: 146,
     icon: "calendar",
     data: {
       title: "Upcoming Trip",
@@ -59,10 +58,10 @@ const myDots = [
     }
   },
   {
-    lat: -47,
-    lng: 153,
-    color: "red",
-    icon: "remote",
+    lat: -61,
+    lng: 154,
+    color: "green",
+    icon: "circle",
     data: {
       title: "Melbourne, Australia",
       description: "I've interned at Aubot remotely as a Software Engineer.",
@@ -155,8 +154,6 @@ export default function WorldMap({
     return () => window.removeEventListener("resize", updateTooltipPosition);
   }, [updateTooltipPosition]);
 
-
-  // Show loading state until client-side rendering is complete
   if (!isClient || !svgMap) {
     return (
       <div className="w-full aspect-[2/1] bg-white rounded-b-lg relative font-sans mx-auto flex items-center justify-center">
@@ -166,10 +163,10 @@ export default function WorldMap({
   }
 
   return (
-    <div className="w-full bg-white rounded-b-lg relative font-sans mx-auto overflow-visible">
+    <div className="w-full rounded-b-lg border-t-2 border-[#00f5ff]/70 relative font-sans mx-auto overflow-visible">
       <img
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
-        className="h-full w-full pointer-events-none select-none rounded-2xl"
+        className="h-full w-full pointer-events-none select-none rounded-b-2xl"
         alt="world map"
         height="495"
         width="1056"
@@ -225,36 +222,6 @@ export default function WorldMap({
                     />
                   </circle>
                 </>
-              ) : dot.icon === "remote" ? (
-                <>
-                  <circle
-                    cx="0"
-                    cy="0"
-                    r="2"
-                    fill={"#4287f5"}
-                    opacity="0.5"
-                  >
-                    <animate
-                      attributeName="r"
-                      from="2"
-                      to="8"
-                      dur="1.5s"
-                      begin="0s"
-                      repeatCount="indefinite"
-                    />
-                    <animate
-                      attributeName="opacity"
-                      from="0.5"
-                      to="0"
-                      dur="1.5s"
-                      begin="0s"
-                      repeatCount="indefinite"
-                    />
-                  </circle>
-                  <g transform="translate(-5, -5)">
-                    <LaptopHouse className="text-blue-500" />
-                  </g>
-                </>
               ) : dot.icon === "calendar" ? (
                 <>
                   <circle
@@ -309,7 +276,7 @@ export default function WorldMap({
               <img 
                 src={dots[hoveredDot].data?.image} 
                 alt={dots[hoveredDot].data?.title}
-                className="w-8 h-8 rounded-full object-cover flex-shrink-0"
+                className="w-8 h-8 rounded-full object-cover flex-shrink-0 border border-black"
                 loading="lazy"
               />
             )}

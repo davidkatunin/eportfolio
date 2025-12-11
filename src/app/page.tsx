@@ -3,7 +3,6 @@
 import NameLoop from "@/components/NameLoop";
 import ScrollDownArrow from "@/components/ScrollDownArrow";
 import WorldMap from "@/components/world-map";
-import { LaptopHouse } from "@/components/LaptopHouse";
 import { SpiralCalendar } from "@/components/SpiralCalendar";
 import { ContactSection } from "@/components/ContactSection";
 import { FlagBadges } from "@/components/FlagBadges";
@@ -201,8 +200,15 @@ export default function Home() {
               </div>
             </section>
           </div>
-          <div className="max-w-6xl mx-auto px-4 w-full bg-white rounded-t-lg relative font-sans p-4">
-            <h3 className="text-sm font-semibold text-gray-800 mb-3">Legend</h3>
+          <div className="max-w-6xl mx-auto px-4 w-full bg-[#050816] rounded-t-lg relative font-sans p-4">
+            <div className="flex flex-row gap-2 text-sm">
+              <h3 className="text-sm font-semibold mb-3">
+                <span className="text-yellow-600">Le</span>
+                <span className="text-green-600">ge</span>
+                <span className="text-red-600">nd</span>
+              </h3>
+              <span className="text-gray-800">- hover points for info !</span>
+            </div>
             <div className="flex flex-wrap items-center gap-6">
               <div className="flex items-center space-x-2">
                 <div className="flex items-center justify-center w-5 h-5">
@@ -227,12 +233,6 @@ export default function Home() {
                   </svg>
                 </div>
                 <span className="text-xs text-gray-700">Past Work</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="flex items-center justify-center w-5 h-5">
-                  <LaptopHouse className="text-blue-500 w-4 h-4" />
-                </div>
-                <span className="text-xs text-gray-700">Remote</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="flex items-center justify-center w-5 h-5">
