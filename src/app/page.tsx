@@ -6,7 +6,7 @@ import WorldMap from "@/components/world-map";
 import { SpiralCalendar } from "@/components/SpiralCalendar";
 import { ContactSection } from "@/components/ContactSection";
 import { FlagBadges } from "@/components/FlagBadges";
-import { MapPin, Terminal, Code2, Camera, Briefcase, Calendar } from "lucide-react";
+import { MapPin, Terminal, Code2, Camera, Briefcase, Calendar, Code } from "lucide-react";
 import { motion } from 'motion/react';
 
 const experiences = [
@@ -67,10 +67,10 @@ export default function Home() {
               <img
                 src="/portrait.PNG"
                 alt="Portrait of David Katunin"
-                className="w-full h-full object-cover translate-y-[8%] sm:translate-y-[5%] sm:object-contain sm:origin-center sm:scale-95 sm:object-center sm:-translate-x-[20%]"
+                className="w-full h-full object-cover translate-y-[8%] sm:translate-y-[6%] sm:object-contain sm:origin-center sm:scale-95 sm:object-center sm:-translate-x-[20%]"
               />
             </div>
-            <div className="absolute inset-y-0 right-0 w-1/2 h-full flex flex-col justify-center px-6 sm:px-12 text-white bg-gradient-to-l from-[#0a0e27]/60 via-[#0a0e27]/30 to-transparent z-10">
+            <div className="absolute inset-y-0 right-0 w-1/2 h-full flex flex-col justify-center px-6 sm:pt-40 sm:px-12 text-white bg-gradient-to-l from-[#0a0e27]/60 via-[#0a0e27]/30 to-transparent z-10">
               <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 -translate-y-[90px]">
                 <div className="flex items-center gap-4 mb-6 justify-center md:justify-start">
                   <div className="flex items-center gap-2 px-4 py-2 bg-[#050816] border border-gray-800">
@@ -207,7 +207,7 @@ export default function Home() {
                 <span className="text-green-600">ge</span>
                 <span className="text-red-600">nd</span>
               </h3>
-              <span className="text-gray-800">- hover points for info !</span>
+              <span className="text-gray-800">- hover points for info</span>
             </div>
             <div className="flex flex-wrap items-center gap-6">
               <div className="flex items-center space-x-2">
@@ -247,6 +247,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="bg-[#050816]">
+        <section className="h-[500px] pt-20 max-w-6xl mx-auto px-4 text-start">
+          <div className="mx-auto">
+            <div className="flex items-center gap-3 mb-4">
+              <Code className="w-6 h-6 text-[#00f5ff]" />
+              <span className="text-[#00f5ff] tracking-wider uppercase text-sm">Portfolio</span>
+            </div>
+            <h2 className="mb-8 text-white text-5xl font-bold">Featured Projects</h2>
+          </div>
+          <div className="">
+            test
+          </div>
+        </section>
+      </div>
       <section>
         <ContactSection />
       </section>
