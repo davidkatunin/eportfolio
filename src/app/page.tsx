@@ -6,7 +6,8 @@ import WorldMap from "@/components/world-map";
 import { SpiralCalendar } from "@/components/SpiralCalendar";
 import { ContactSection } from "@/components/ContactSection";
 import { FlagBadges } from "@/components/FlagBadges";
-import { MapPin, Terminal, Code2, Camera, Briefcase, Calendar, Code } from "lucide-react";
+import PoliceTape from "@/components/PoliceTape";
+import { MapPin, Terminal, Code2, Camera, Briefcase, Calendar, Code, ExternalLink, Github } from "lucide-react";
 import { motion } from 'motion/react';
 
 const experiences = [
@@ -36,6 +37,70 @@ const experiences = [
     description: 'Developed a secure internal ESG dashboard using AWS services, reducing software costs and improving reporting efficiency, while implementing automated renewal alerts and strengthening code quality through tooling, reviews, and AI-assisted development.',
     technologies: ['Python', 'TypeScript', 'AWS', 'PostgreSQL', 'Docker'],
     color: '#3E5FFF'
+  }
+];
+
+const projects = [
+  {
+    title: 'MediaVault',
+    description: 'Full-stack web app built with the Django framework, enabling users to log, rate, and discover movies, TV shows, books, and video games all in one place.',
+    image: 'https://images.unsplash.com/photo-1763198302381-ebffcec5410f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    technologies: ['Python', 'Django', 'PostgreSQL', 'Docker', 'REST APIs'],
+    docs: 'https://www.linkedin.com/in/david-katunin-783108197/overlay/1757638124532/single-media-viewer/?profileId=ACoAAC4ctlMBpl57nE5o6ZwpWxNfYXb0XRGOpbM',
+    featured: true
+  },
+  {
+    title: 'S.D.C.E',
+    description: 'Productivity Chrome extension that tracks browser activity, resets daily stats, and manages streaks using JavaScript and Chrome Storage.',
+    image: 'https://lh3.googleusercontent.com/85QQTCDSLmNtpHwOVCrqsv4fl41s6O1tAxlsK3Dc4K2DXWSe4dha4lZvqS0L7qMDaJsWnvMk6SqWIktLzfXBTQOGBK8=s800-w800-h500',
+    technologies: ['TypeScript', 'Chrome DevTools', 'TailwindCSS', 'Git'],
+    github: 'https://github.com/davidkatunin/SDCE',
+    demo: 'https://chromewebstore.google.com/',
+    featured: true
+  },
+  {
+    title: 'FireArm Forge',
+    description: 'Firearm customization platform built with a modular backend and interactive UI, allowing users to configure real-world weapons, browse attachment data, and visualize builds in real time.',
+    image: 'https://images.unsplash.com/photo-1543347080-1a67824f1be2?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    comingSoon: true,
+  },
+  {
+    title: 'CloudDeploy',
+    description: 'DevOps automation platform for deploying and managing containerized applications. Features CI/CD pipelines, auto-scaling, and monitoring.',
+    image: 'https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZyUyMGRhdGF8ZW58MXx8fHwxNzY0ODc0NTA1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    technologies: ['Go', 'Docker', 'Kubernetes', 'AWS', 'Terraform'],
+    github: '#',
+    demo: '#',
+    featured: false
+  },{
+    title: 'CloudDeploy',
+    description: 'DevOps automation platform for deploying and managing containerized applications. Features CI/CD pipelines, auto-scaling, and monitoring.',
+    image: 'https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZyUyMGRhdGF8ZW58MXx8fHwxNzY0ODc0NTA1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    technologies: ['Go', 'Docker', 'Kubernetes', 'AWS', 'Terraform'],
+    github: '#',
+    demo: '#',
+    featured: false
+  }
+];
+
+const photoshoots = [
+  {
+    title: 'Urban Nights',
+    description: 'Capturing the neon-lit streets and cyberpunk aesthetics of the city after dark.',
+    image: 'https://images.unsplash.com/photo-1598087216773-d02ad98034f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1cmJhbiUyMG5pZ2h0JTIwcGhvdG9ncmFwaHl8ZW58MXx8fHwxNzY0ODIwODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    category: 'Street Photography'
+  },
+  {
+    title: 'Neon Portraits',
+    description: 'Studio sessions with creative lighting techniques and vibrant color palettes.',
+    image: 'https://images.unsplash.com/photo-1615276884890-2f2ffdab7b43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwcG9ydHJhaXQlMjBwaG90b2dyYXBoeXxlbnwxfHx8fDE3NjQ4OTc3MTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    category: 'Portrait'
+  },
+  {
+    title: 'Architectural Dreams',
+    description: 'Exploring modern architecture through a futuristic lens with dramatic night compositions.',
+    image: 'https://images.unsplash.com/photo-1642287040066-2bd340523289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmFsJTIwbmlnaHQlMjBjaXR5fGVufDF8fHx8MTc2NDg5NzcxNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    category: 'Architecture'
   }
 ];
 
@@ -96,7 +161,7 @@ export default function Home() {
                     <Code2 className="w-5 h-5 text-[#00f5ff]" />
                     <span className="text-[#00f5ff]">Software Engineer</span>
                   </div>
-                  <div className="flex items-center gap-3 px-6 py-3 bg-[#050816] border border-[#ff006e]/30 rounded">
+                  <div className="flex items-center gap-3 px-6 py-3 bg-[#050816] border border-[#ff006e]/30 rounded cyber-glow-pink">
                     <Camera className="w-5 h-5 text-[#ff006e]" />
                     <span className="text-[#ff006e]">Photographer</span>
                   </div>
@@ -110,7 +175,7 @@ export default function Home() {
                   </a>
                   <a 
                     href="#contact" 
-                    className="px-8 py-3 border border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff]/10 transition-all duration-300"
+                    className="px-8 py-3 bg-[#050816] text-[#00f5ff] hover:text-[#0a0e27] hover:bg-[#00f5ff]/90 transition-all duration-300 cyber-glow-cyan"
                   >
                     Get In Touch
                   </a>
@@ -207,38 +272,34 @@ export default function Home() {
                 <span className="text-green-600">ge</span>
                 <span className="text-red-600">nd</span>
               </h3>
-              <span className="text-gray-800">- hover points for info</span>
+              <span className="text-[#5c5c5c]">- hover points for info</span>
             </div>
             <div className="flex flex-wrap items-center gap-6">
               <div className="flex items-center space-x-2">
                 <div className="flex items-center justify-center w-5 h-5">
                   <svg viewBox="0 0 20 20" className="w-4 h-4">
-                    <circle cx="10" cy="10" r="2" fill="red" />
-                    <circle cx="10" cy="10" r="2" fill="red" opacity="0.5">
-                      <animate attributeName="r" from="2" to="6" dur="1.5s" begin="0s" repeatCount="indefinite" />
-                      <animate attributeName="opacity" from="0.5" to="0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+                    <circle cx="10" cy="10" r="5" fill="#0abdc6" />
+                    <circle cx="10" cy="10" r="5" fill="#0abdc6" opacity="0.5">
                     </circle>
                   </svg>
                 </div>
-                <span className="text-xs text-gray-700">Current Location</span>
+                <span className="text-xs text-[#5c5c5c]">Current Location</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="flex items-center justify-center w-5 h-5">
                   <svg viewBox="0 0 20 20" className="w-4 h-4">
-                    <circle cx="10" cy="10" r="2" fill="green" />
-                    <circle cx="10" cy="10" r="2" fill="green" opacity="0.5">
-                      <animate attributeName="r" from="2" to="6" dur="1.5s" begin="0s" repeatCount="indefinite" />
-                      <animate attributeName="opacity" from="0.5" to="0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+                    <circle cx="10" cy="10" r="5" fill="#ffc0cb" />
+                    <circle cx="10" cy="10" r="5" fill="#ffc0cb" opacity="0.5">
                     </circle>
                   </svg>
                 </div>
-                <span className="text-xs text-gray-700">Past Work</span>
+                <span className="text-xs text-[#5c5c5c]">Past Work</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="flex items-center justify-center w-5 h-5">
                   <SpiralCalendar className="w-4 h-4" />
                 </div>
-                <span className="text-xs text-gray-700">Upcoming</span>
+                <span className="text-xs text-[#5c5c5c]">Upcoming</span>
               </div>
             </div>
           </div>
@@ -248,7 +309,7 @@ export default function Home() {
         </div>
       </section>
       <div className="bg-[#050816]">
-        <section className="h-[500px] pt-20 max-w-6xl mx-auto px-4 text-start">
+        <section className="py-20 max-w-6xl mx-auto px-4 text-start">
           <div className="mx-auto">
             <div className="flex items-center gap-3 mb-4">
               <Code className="w-6 h-6 text-[#00f5ff]" />
@@ -256,8 +317,208 @@ export default function Home() {
             </div>
             <h2 className="mb-8 text-white text-5xl font-bold">Featured Projects</h2>
           </div>
-          <div className="">
-            test
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {projects.filter(p => p.featured).map((project, index) => (
+              <motion.div 
+                key={index}
+                className={`group relative overflow-hidden bg-[#0a0e27] border border-gray-800 hover:border-[#00f5ff]/50 transition-all duration-300 ${project.comingSoon ? 'opacity-60' : ''}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: project.comingSoon ? 0.6 : 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: project.comingSoon ? 0 : -5 }}
+              >
+                {project.comingSoon && (
+                  <>
+                    <div className="absolute inset-0 bg-[#0a0e27]/40 backdrop-blur-[2px] z-20"></div>
+                    <PoliceTape />
+                  </>
+                )}
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={project.image} 
+                    alt={project.title}
+                    className={`w-full h-full object-cover transition-transform duration-500 ${project.comingSoon ? '' : 'group-hover:scale-110'}`}
+                    style={project.comingSoon ? { filter: 'grayscale(30%) blur(2px)' } : {}}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e27] via-[#0a0e27]/50 to-transparent"></div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-white mb-3 font-bold text-3xl">{project.title}</h3>
+                  <p className="text-gray-300 mb-4">{project.description}</p>
+                  {project.technologies && project.technologies.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex}
+                          className="px-3 py-1 text-sm bg-[#050816] border border-[#00f5ff]/30 text-[#00f5ff]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {!project.comingSoon && (
+                    <div className="flex gap-4">
+                      {project.github && project.github !== '#' && (
+                        <a 
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-gray-300 hover:text-[#00f5ff] transition-colors"
+                        >
+                          <Github className="w-5 h-5" />
+                          <span className="text-sm">Code</span>
+                        </a>
+                      )}
+                      {project.demo && project.demo !== '#' && (
+                        <a 
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-gray-300 hover:text-[#00f5ff] transition-colors"
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                          <span className="text-sm">Live Demo</span>
+                        </a>
+                      )}
+                      {project.docs && project.docs !== '#' && (
+                        <a 
+                          href={project.docs}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-gray-300 hover:text-[#00f5ff] transition-colors"
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                          <span className="text-sm">Docs</span>
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+                {!project.comingSoon && (
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00f5ff] via-[#8338ec] to-[#ff006e] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {projects.filter(p => !p.featured).map((project, index) => (
+              <motion.div 
+                key={index}
+                className={`group relative overflow-hidden bg-[#0a0e27] border border-gray-800 hover:border-[#8338ec]/50 transition-all duration-300 ${project.comingSoon ? 'opacity-60' : ''}`}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: project.comingSoon ? 0.6 : 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                whileHover={{ y: project.comingSoon ? 0 : -5 }}
+              >
+                {project.comingSoon && (
+                  <>
+                    <div className="absolute inset-0 bg-[#0a0e27]/40 backdrop-blur-[2px] z-20"></div>
+                    <PoliceTape />
+                  </>
+                )}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className={`w-full h-full object-cover transition-transform duration-500 ${project.comingSoon ? '' : 'group-hover:scale-110'}`}
+                    style={project.comingSoon ? { filter: 'grayscale(30%) blur(2px)' } : {}}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e27] to-transparent"></div>
+                </div>
+                
+                <div className="p-5">
+                  <h4 className="text-white mb-2">{project.title}</h4>
+                  <p className="text-gray-300 text-sm mb-3">{project.description}</p>
+                  
+                  {!project.comingSoon && (
+                    <div className="flex gap-3">
+                      {project.github && project.github !== '#' && (
+                        <a 
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-[#8338ec] transition-colors"
+                        >
+                          <Github className="w-5 h-5" />
+                        </a>
+                      )}
+                      {project.demo && project.demo !== '#' && (
+                        <a 
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-[#8338ec] transition-colors"
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                        </a>
+                      )}
+                      {project.docs && project.docs !== '#' && (
+                        <a 
+                          href={project.docs}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-[#8338ec] transition-colors"
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </div>
+      <div className="bg-[#121838]">
+        <section className="py-20 max-w-6xl mx-auto px-4 text-start">
+          <div className="mx-auto">
+            <div className="flex items-center gap-3 mb-4">
+              <Camera className="w-6 h-6 text-[#ff006e]" />
+              <span className="text-[#ff006e] tracking-wider uppercase text-sm">Visual Stories</span>
+            </div>
+            <h2 className="mb-8 text-white text-5xl font-bold">Photography</h2>
+            <p className="text-gray-300 mb-12 max-w-2xl">
+              When I'm not coding, I explore the intersection of technology and art through photography, focusing on cyberpunk aesthetics and urban landscapes.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {photoshoots.map((shoot, index) => (
+              <motion.div 
+                key={index}
+                className="group relative overflow-hidden bg-[#050816] border border-gray-800 hover:border-[#ff006e]/50 transition-all duration-300"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="relative h-80 overflow-hidden">
+                  <img 
+                    src={shoot.image} 
+                    alt={shoot.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
+                    <span className="inline-block px-3 py-1 text-xs bg-[#ff006e] text-white mb-3">
+                      {shoot.category}
+                    </span>
+                    <h4 className="text-white mb-2">{shoot.title}</h4>
+                    <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                      {shoot.description}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="absolute top-0 left-0 w-full h-1 bg-[#ff006e] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.div>
+            ))}
           </div>
         </section>
       </div>

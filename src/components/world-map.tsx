@@ -28,7 +28,7 @@ const myDots = [
   {
     lat: 38,
     lng: -90,
-    color: "red",
+    color: "#0abdc6",
     icon: "circle",
     data: {
       title: "Current Location",
@@ -39,7 +39,7 @@ const myDots = [
   {
     lat: 50,
     lng: 26,
-    color: "green",
+    color: "#ffc0cb",
     icon: "circle",
     data: {
       title: "Vilnius, Lithuania",
@@ -60,7 +60,7 @@ const myDots = [
   {
     lat: -61,
     lng: 154,
-    color: "green",
+    color: "#ffc0cb",
     icon: "circle",
     data: {
       title: "Melbourne, Australia",
@@ -87,7 +87,7 @@ export default function WorldMap({
     const map = new DottedMap({ height: 100, grid: "diagonal" });
     const mapSvg = map.getSVG({
       radius: .5,
-      color: "#000", // map dots color
+      color: "#5c5c5c", // map dots color
       shape: "circle",
       backgroundColor: "#050816", // Background Color of map div
     });
@@ -194,13 +194,13 @@ export default function WorldMap({
                   <circle
                     cx="0"
                     cy="0"
-                    r="2"
+                    r="3"
                     fill={color}
                   />
                   <circle
                     cx="0"
                     cy="0"
-                    r="2"
+                    r="3"
                     fill={color}
                     opacity="0.5"
                   >

@@ -132,3 +132,25 @@ body {
   }
 }
 
+.police-tape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 60px;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  background: repeating-linear-gradient(
+    45deg,
+    #8338ec 0%,
+    #8338ec 10%,
+    #ff006e 10%,
+    #ff006e 20%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  z-index: 30;
+  box-shadow: 0 0 20px rgba(131, 56, 236, 0.6), 0 0 40px rgba(255, 0, 110, 0.4);
+}
+
