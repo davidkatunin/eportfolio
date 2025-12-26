@@ -154,7 +154,7 @@ export default function Home() {
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-3xl text-center sm:text-left mx-auto sm:mx-0">
                 Building the future with code and capturing moments through the lens. 
-                Specializing in full-stack development, AI/ML, and cyberpunk aesthetics.
+                Specializing in full-stack development, AI-driven systems, and scalability.
               </p>
               <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center sm:justify-start">
                 <div className="flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 bg-[#050816] border border-[#00f5ff]/30 rounded cyber-glow-cyan">
