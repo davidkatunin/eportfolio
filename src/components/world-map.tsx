@@ -3,6 +3,7 @@
 import { useRef, useState, useCallback, useEffect } from "react";
 import DottedMap from "dotted-map";
 import { SpiralCalendar } from "./SpiralCalendar";
+import Image from 'next/image';
 
 interface MapProps {
   dots?: Array<{
@@ -164,7 +165,7 @@ export default function WorldMap({
 
   return (
     <div className="w-full rounded-b-lg border-t-2 border-[#00f5ff]/70 relative font-sans mx-auto overflow-visible">
-      <img
+      <Image
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         className="h-full w-full pointer-events-none select-none rounded-b-2xl"
         alt="world map"
@@ -273,7 +274,7 @@ export default function WorldMap({
         >
           <div className="flex items-start space-x-2">
             {dots[hoveredDot].data?.image && (
-              <img 
+              <Image 
                 src={dots[hoveredDot].data?.image} 
                 alt={dots[hoveredDot].data?.title}
                 className="w-8 h-8 rounded-full object-cover flex-shrink-0 border border-black"

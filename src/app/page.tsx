@@ -9,6 +9,7 @@ import { FlagBadges } from "@/components/FlagBadges";
 import PoliceTape from "@/components/PoliceTape";
 import { MapPin, Terminal, Code2, Camera, Briefcase, Calendar, Code, ExternalLink, Github } from "lucide-react";
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 const experiences = [
   {
@@ -125,7 +126,7 @@ export default function Home() {
               <NameLoop />
             </div>
             <div className="absolute inset-0 overflow-hidden z-0">
-              <img
+              <Image
                 src="/portrait.png"
                 alt="Portrait of David Katunin"
                 className="w-full h-full object-cover object-center sm:object-contain sm:origin-center sm:scale-95 sm:object-center sm:-translate-x-[20%] sm:translate-y-[6%]"
@@ -147,7 +148,7 @@ export default function Home() {
                   <span className="text-[#00f5ff] tracking-wider uppercase text-xs sm:text-sm text-center sm:text-left">Full Stack Developer & Visual Artist</span>
                 </div>
                 <h1 className="mb-4 sm:mb-6 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-center sm:text-left">
-                  <span className="block text-white">Hi, I'm</span>
+                  <span className="block text-white">Hi, I&apos;m</span>
                   <span className="block text-glow-cyan text-[#00f5ff] glitch-text">David Katunin</span>
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-3xl text-center sm:text-left mx-auto sm:mx-0">
@@ -218,7 +219,7 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div className="">
                       <div className="flex flex-row gap-5">
-                        <img src={exp.logo} alt="" className="w-14 h-14" />
+                        <Image src={exp.logo} alt="" className="w-14 h-14" />
                         <div className="">
                           <h3 className="text-white mb-2">{exp.title}</h3>
                           <h4 className="text-[#00f5ff] mb-2">{exp.company}</h4>
@@ -255,10 +256,10 @@ export default function Home() {
                   <MapPin className="w-6 h-6 text-[#00f5ff]" />
                   <span className="text-[#00f5ff] tracking-wider uppercase text-sm">Global Experience</span>
                 </div>
-                <h2 className="mb-8 text-white text-5xl font-bold">Where I've Worked</h2>
+                <h2 className="mb-8 text-white text-5xl font-bold">Where I&apos;ve Worked</h2>
                 <p className="text-gray-300 mb-12 max-w-2xl">
-                  Each dot on this map represents more than just a destination—it's where I've worked, 
-                  lived, and captured moments that tell the story of my career in software development and passion for photography.
+                Each dot on this map represents more than just a destination—it&apos;s where I&apos;ve worked,
+                lived, and captured moments that tell the story of my career in software development and passion for photography.
                 </p>
               </div>
             </section>
@@ -333,7 +334,7 @@ export default function Home() {
                   </>
                 )}
                 <div className="relative h-64 overflow-hidden">
-                  <img
+                  <Image
                     src={project.image} 
                     alt={project.title}
                     className={`w-full h-full object-cover transition-transform duration-500 ${project.comingSoon ? '' : 'group-hover:scale-110'}`}
@@ -418,7 +419,7 @@ export default function Home() {
                   </>
                 )}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <Image 
                     src={project.image} 
                     alt={project.title}
                     className={`w-full h-full object-cover transition-transform duration-500 ${project.comingSoon ? '' : 'group-hover:scale-110'}`}
@@ -495,7 +496,7 @@ export default function Home() {
                 whileHover={{ y: -10 }}
               >
                 <div className="relative h-80 overflow-hidden">
-                  <img 
+                  <Image 
                     src={shoot.image} 
                     alt={shoot.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

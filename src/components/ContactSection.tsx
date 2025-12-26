@@ -15,7 +15,7 @@ export function ContactSection() {
           <span className="text-[#00f5ff] tracking-wider uppercase text-sm">Get In Touch</span>
         </div>
         <h2 className="mb-8 text-white">
-          Let's Build Something
+          Let&apos;s Build Something
         </h2>
         <p className="text-gray-300 mb-12 text-xl max-w-2xl">
           Have a question, new opportunity, or just want to have a quick chat? Feel free to send me a message.

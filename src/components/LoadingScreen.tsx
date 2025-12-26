@@ -103,7 +103,6 @@ export default function LoadingScreen() {
   useEffect(() => {
     let isMounted = true;
     let hasTriggered = false;
-    let progressInterval: NodeJS.Timeout;
 
     // Simulate progress
     const updateProgress = () => {
@@ -115,7 +114,7 @@ export default function LoadingScreen() {
       });
     };
 
-    progressInterval = setInterval(updateProgress, 50);
+    const progressInterval = setInterval(updateProgress, 50);
 
     function handlePageLoad() {
       if (!isMounted || hasTriggered) return;
@@ -147,7 +146,7 @@ export default function LoadingScreen() {
       // Also check for images and other resources
       const images = document.querySelectorAll('img');
       const totalImages = images.length;
-      let imageCleanupFunctions: Array<() => void> = [];
+      const imageCleanupFunctions: Array<() => void> = [];
 
       if (totalImages > 0) {
         let loadedImages = 0;

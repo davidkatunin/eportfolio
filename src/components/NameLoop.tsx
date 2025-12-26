@@ -64,7 +64,8 @@ export default function NameLoop() {
       isRunning = false;
       cancelAnimationFrame(frame);
     };
-  }, [itemWidth, speedPxPerSecond]);
+
+  }, [itemWidth, speedPxPerSecond, isClient]);
 
   const NameBlock = (
     <div className="loop-item flex items-center">
