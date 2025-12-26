@@ -134,7 +134,7 @@ export default function Home() {
             />
           </div>
           <div className="relative w-full flex-1 flex flex-col justify-center px-4 py-12 sm:absolute sm:inset-y-0 sm:right-0 sm:w-1/2 sm:h-full sm:px-6 sm:py-0 text-white bg-gradient-to-b from-[#0a0e27]/90 via-[#0a0e27]/70 to-[#0a0e27]/90 sm:bg-gradient-to-l sm:from-[#0a0e27]/60 sm:via-[#0a0e27]/30 sm:to-transparent z-10">
-            <div className="relative z-10 max-w-6xl mx-auto w-full sm:px-6 sm:py-20 sm:-translate-y-[90px]">
+            <div className="relative z-10 max-w-6xl mx-auto w-full sm:px-6 sm:py-20 sm:pt-24 sm:-translate-y-[22px]">
               <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-4 sm:mb-6 sm:justify-start">
                 <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#050816] border border-gray-800">
                   <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00f5ff]" />

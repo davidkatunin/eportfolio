@@ -108,7 +108,7 @@ export function ContactSection() {
       </div>
       <div className="text-center pt-8 border-t border-gray-800">
         <p className="text-gray-400">
-          © 2025 David Katunin
+          © 2026 David Katunin
         </p>
       </div>
     </section>
