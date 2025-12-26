@@ -59,48 +59,44 @@ const projects = [
     featured: true
   },
   {
+    title: 'Instagram Gallery',
+    description: 'An unordered gallery showcasing my photography work, featuring curated shots that reflect my visual style and creative perspective beyond software development.',
+    image: 'https://images.unsplash.com/photo-1507643179773-3e975d7ac515?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    demo: 'https://www.instagram.com/dova.visuals/',
+  },
+  {
     title: 'FireArm Forge',
     description: 'Firearm customization platform built with a modular backend and interactive UI, allowing users to configure real-world weapons, browse attachment data, and visualize builds in real time.',
     image: 'https://images.unsplash.com/photo-1543347080-1a67824f1be2?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     comingSoon: true,
   },
   {
-    title: 'CloudDeploy',
-    description: 'DevOps automation platform for deploying and managing containerized applications. Features CI/CD pipelines, auto-scaling, and monitoring.',
-    image: 'https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZyUyMGRhdGF8ZW58MXx8fHwxNzY0ODc0NTA1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    title: 'Japan Gallery',
+    description: 'The Gallery for my upcoming Japan trip in March-April 2026, where I move across Tokyo, Osaka, and Kyoto',
+    image: 'https://images.unsplash.com/photo-1660477703315-516fe0575770?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     technologies: ['Go', 'Docker', 'Kubernetes', 'AWS', 'Terraform'],
-    github: '#',
-    demo: '#',
-    featured: false
-  },{
-    title: 'CloudDeploy',
-    description: 'DevOps automation platform for deploying and managing containerized applications. Features CI/CD pipelines, auto-scaling, and monitoring.',
-    image: 'https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZyUyMGRhdGF8ZW58MXx8fHwxNzY0ODc0NTA1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    technologies: ['Go', 'Docker', 'Kubernetes', 'AWS', 'Terraform'],
-    github: '#',
-    demo: '#',
-    featured: false
+    comingSoon: true,
   }
 ];
 
 const photoshoots = [
   {
-    title: 'Urban Nights',
-    description: 'Capturing the neon-lit streets and cyberpunk aesthetics of the city after dark.',
-    image: 'https://images.unsplash.com/photo-1598087216773-d02ad98034f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1cmJhbiUyMG5pZ2h0JTIwcGhvdG9ncmFwaHl8ZW58MXx8fHwxNzY0ODIwODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    category: 'Street Photography'
+    title: 'Cities Gallery',
+    description: 'A gallery of my cities and architecture shots across America and Europe',
+    image: './DSC00824.jpg',
+    category: 'Cities & Architecture'
   },
   {
-    title: 'Neon Portraits',
-    description: 'Studio sessions with creative lighting techniques and vibrant color palettes.',
-    image: 'https://images.unsplash.com/photo-1615276884890-2f2ffdab7b43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwcG9ydHJhaXQlMjBwaG90b2dyYXBoeXxlbnwxfHx8fDE3NjQ4OTc3MTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    category: 'Portrait'
+    title: 'Peoples Gallery',
+    description: 'A gallery of portraits I have shot of friends and family over the years.',
+    image: './DSC00807.jpg',
+    category: 'People & Portraits'
   },
   {
-    title: 'Architectural Dreams',
-    description: 'Exploring modern architecture through a futuristic lens with dramatic night compositions.',
-    image: 'https://images.unsplash.com/photo-1642287040066-2bd340523289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmFsJTIwbmlnaHQlMjBjaXR5fGVufDF8fHx8MTc2NDg5NzcxNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    category: 'Architecture'
+    title: 'Joninės Gallery',
+    description: 'A gallery of my time in Kernavė 2024, during Joninės.',
+    image: './DSC00180.jpg',
+    category: 'Events'
   }
 ];
 
@@ -124,58 +120,60 @@ export default function Home() {
             WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%)'
           }}
         />
-          <section className="relative flex flex-col justify-between items-center h-[100vh]">
-            <div className="absolute bottom-0 left-0 z-0 w-full pb-20 sm:pb-0 opacity-60">
+          <section className="relative flex flex-col justify-between items-center min-h-[100vh] sm:h-[100vh]">
+            <div className="hidden sm:block absolute bottom-0 left-0 z-0 w-full opacity-60">
               <NameLoop />
             </div>
             <div className="absolute inset-0 overflow-hidden z-0">
               <img
                 src="/portrait.PNG"
                 alt="Portrait of David Katunin"
-                className="w-full h-full object-cover translate-y-[8%] sm:translate-y-[6%] sm:object-contain sm:origin-center sm:scale-95 sm:object-center sm:-translate-x-[20%]"
+                className="w-full h-full object-cover object-center sm:object-contain sm:origin-center sm:scale-95 sm:object-center sm:-translate-x-[20%] sm:translate-y-[6%]"
               />
             </div>
-            <div className="absolute inset-y-0 right-0 w-1/2 h-full flex flex-col justify-center px-6 sm:pt-40 sm:px-12 text-white bg-gradient-to-l from-[#0a0e27]/60 via-[#0a0e27]/30 to-transparent z-10">
-              <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 -translate-y-[90px]">
-                <div className="flex items-center gap-4 mb-6 justify-center md:justify-start">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-[#050816] border border-gray-800">
-                    <MapPin className="w-4 h-4 text-[#00f5ff]" />
-                    <span className="text-gray-300 text-sm">Based in</span>
+            <div className="relative w-full flex-1 flex flex-col justify-center px-4 py-12 sm:absolute sm:inset-y-0 sm:right-0 sm:w-1/2 sm:h-full sm:px-6 sm:py-0 text-white bg-gradient-to-b from-[#0a0e27]/90 via-[#0a0e27]/70 to-[#0a0e27]/90 sm:bg-gradient-to-l sm:from-[#0a0e27]/60 sm:via-[#0a0e27]/30 sm:to-transparent z-10">
+              <div className="relative z-10 max-w-6xl mx-auto w-full sm:px-6 sm:py-20 sm:-translate-y-[90px]">
+                <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-4 sm:mb-6 sm:justify-start">
+                  <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#050816] border border-gray-800">
+                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00f5ff]" />
+                    <span className="text-gray-300 text-xs sm:text-sm">
+                      Based in
+                    </span>
                   </div>
                   <FlagBadges />
                 </div>
-                <div className="flex items-center gap-3 mb-6">
-                  <Terminal className="w-6 h-6 text-[#00f5ff]" />
-                  <span className="text-[#00f5ff] tracking-wider uppercase text-sm">Full Stack Developer & Visual Artist</span>
+                <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center sm:justify-start">
+                  <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-[#00f5ff]" />
+                  <span className="text-[#00f5ff] tracking-wider uppercase text-xs sm:text-sm text-center sm:text-left">Full Stack Developer & Visual Artist</span>
                 </div>
-                <h1 className="mb-6 text-5xl sm:text-6xl lg:text-7xl">
+                <h1 className="mb-4 sm:mb-6 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-center sm:text-left">
                   <span className="block text-white">Hi, I'm</span>
                   <span className="block text-glow-cyan text-[#00f5ff] glitch-text">David Katunin</span>
                 </h1>
-                <p className="text-xl text-gray-300 mb-8 max-w-3xl">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-3xl text-center sm:text-left mx-auto sm:mx-0">
                   Building the future with code and capturing moments through the lens. 
                   Specializing in full-stack development, AI/ML, and cyberpunk aesthetics.
                 </p>
-                <div className="flex flex-wrap gap-4 mb-12">
-                  <div className="flex items-center gap-3 px-6 py-3 bg-[#050816] border border-[#00f5ff]/30 rounded cyber-glow-cyan">
-                    <Code2 className="w-5 h-5 text-[#00f5ff]" />
-                    <span className="text-[#00f5ff]">Software Engineer</span>
+                <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center sm:justify-start">
+                  <div className="flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 bg-[#050816] border border-[#00f5ff]/30 rounded cyber-glow-cyan">
+                    <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#00f5ff]" />
+                    <span className="text-sm sm:text-base text-[#00f5ff]">Software Engineer</span>
                   </div>
-                  <div className="flex items-center gap-3 px-6 py-3 bg-[#050816] border border-[#ff006e]/30 rounded cyber-glow-pink">
-                    <Camera className="w-5 h-5 text-[#ff006e]" />
-                    <span className="text-[#ff006e]">Photographer</span>
+                  <div className="flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 bg-[#050816] border border-[#ff006e]/30 rounded cyber-glow-pink">
+                    <Camera className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff006e]" />
+                    <span className="text-sm sm:text-base text-[#ff006e]">Photographer</span>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center sm:justify-start">
                   <a 
                     href="#projects" 
-                    className="px-8 py-3 bg-[#00f5ff] text-[#0a0e27] hover:bg-[#00f5ff]/90 transition-all duration-300 cyber-glow-cyan"
+                    className="px-6 py-2.5 sm:px-8 sm:py-3 bg-[#00f5ff] text-[#0a0e27] hover:bg-[#00f5ff]/90 transition-all duration-300 cyber-glow-cyan text-center text-sm sm:text-base font-medium"
                   >
                     View Projects
                   </a>
                   <a 
                     href="#contact" 
-                    className="px-8 py-3 bg-[#050816] text-[#00f5ff] hover:text-[#0a0e27] hover:bg-[#00f5ff]/90 transition-all duration-300 cyber-glow-cyan"
+                    className="px-6 py-2.5 sm:px-8 sm:py-3 bg-[#050816] text-[#00f5ff] border border-[#00f5ff]/30 hover:text-[#0a0e27] hover:bg-[#00f5ff]/90 transition-all duration-300 cyber-glow-cyan text-center text-sm sm:text-base font-medium"
                   >
                     Get In Touch
                   </a>
@@ -309,7 +307,7 @@ export default function Home() {
         </div>
       </section>
       <div className="bg-[#050816]">
-        <section className="py-20 max-w-6xl mx-auto px-4 text-start">
+        <section className="py-20 max-w-6xl mx-auto px-4 text-start" id="projects">
           <div className="mx-auto">
             <div className="flex items-center gap-3 mb-4">
               <Code className="w-6 h-6 text-[#00f5ff]" />
@@ -482,7 +480,7 @@ export default function Home() {
             </div>
             <h2 className="mb-8 text-white text-5xl font-bold">Photography</h2>
             <p className="text-gray-300 mb-12 max-w-2xl">
-              When I'm not coding, I explore the intersection of technology and art through photography, focusing on cyberpunk aesthetics and urban landscapes.
+              A selection of photography projects showcasing my work across different subjects, locations, and moments.           
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -522,7 +520,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <section>
+      <section id="contact">
         <ContactSection />
       </section>
     </>

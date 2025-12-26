@@ -1,7 +1,4 @@
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import { Mail, Github, Linkedin, Camera, Code2 } from "lucide-react";
+import { Mail, Github, Linkedin, Send, Instagram } from "lucide-react";
 
 export function ContactSection() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -11,154 +8,105 @@ export function ContactSection() {
   };
 
   return (
-    <section className="w-full min-h-screen overflow-x-hidden relative" style={{
-      backgroundColor: '#c5c1be',
-      backgroundImage: `
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")
-      `,
-      backgroundSize: '200px 200px',
-      backgroundBlendMode: 'overlay'
-    }}>
-      <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <Code2 className="w-6 h-6 text-blue-600" />
-            <Camera className="w-6 h-6 text-purple-600" />
-          </div>
-          <h2 className="mb-4">Let's Work Together</h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Whether you need a developer to bring your vision to life or a photographer to capture your moments, 
-            I'd love to hear from you.
-          </p>
+    <section className="py-20 relative bg-[#050816]">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex items-center gap-3 mb-4">
+          <Send className="w-6 h-6 text-[#00f5ff]" />
+          <span className="text-[#00f5ff] tracking-wider uppercase text-sm">Get In Touch</span>
         </div>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="block text-slate-700">
+        <h2 className="mb-8 text-white">
+          Let's Build Something
+        </h2>
+        <p className="text-gray-300 mb-12 text-xl max-w-2xl">
+          Have a question, new opportunity, or just want to have a quick chat? Feel free to send me a message.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="space-y-6">
+            <div className="p-6 bg-[#0a0e27] border border-gray-800 transition-colors hover:border-[#00f5ff]/50">
+              <Mail className="w-8 h-8 text-[#00f5ff] mb-4" />
+              <h4 className="text-white mb-2">
+                Email
+              </h4>
+              <a href="mailto:davidkatunin@gmail.com" className="text-gray-300 hover:text-[#00f5ff] transition-colors">
+                davidkatunin@gmail.com
+              </a>
+            </div>
+            
+            <div className="p-6 bg-[#0a0e27] border border-gray-800 transition-colors hover:border-[#00f5ff]/50">
+              <h4 className="text-white mb-4">
+                Social
+              </h4>
+              <div className="flex gap-4">
+                <a 
+                  href="#" 
+                  className="w-10 h-10 flex items-center justify-center border border-gray-700 hover:border-[#00f5ff] hover:text-[#00f5ff] transition-transform duration-200 hover:scale-105 hover:-translate-y-0.5"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 flex items-center justify-center border border-gray-700 hover:border-[#00f5ff] hover:text-[#00f5ff] transition-transform duration-200 hover:scale-105 hover:-translate-y-0.5"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 flex items-center justify-center border border-gray-700 hover:border-[#00f5ff] hover:text-[#00f5ff] transition-transform duration-200 hover:scale-105 hover:-translate-y-0.5"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="p-6 bg-[#0a0e27] border border-gray-800" >
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="name" className="block text-sm text-gray-300 mb-2">
                   Name
                 </label>
-                <Input
+                <input 
+                  type="text" 
                   id="name"
-                  type="text"
+                  className="w-full px-4 py-2 bg-[#050816] border border-gray-700 text-white focus:border-[#00f5ff] focus:outline-none transition-colors"
                   placeholder="Your name"
-                  required
-                  className="w-full"
                 />
               </div>
-
-              <div className="space-y-2">
-                <label htmlFor="email" className="block text-slate-700">
+              <div>
+                <label htmlFor="email" className="block text-sm text-gray-300 mb-2">
                   Email
                 </label>
-                <Input
+                <input 
+                  type="email" 
                   id="email"
-                  type="email"
+                  className="w-full px-4 py-2 bg-[#050816] border border-gray-700 text-white focus:border-[#00f5ff] focus:outline-none transition-colors"
                   placeholder="your.email@example.com"
-                  required
-                  className="w-full"
                 />
               </div>
-
-              <div className="space-y-2">
-                <label htmlFor="subject" className="block text-slate-700">
-                  Subject
-                </label>
-                <Input
-                  id="subject"
-                  type="text"
-                  placeholder="What's this about?"
-                  required
-                  className="w-full"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="block text-slate-700">
+              <div>
+                <label htmlFor="message" className="block text-sm text-gray-300 mb-2">
                   Message
                 </label>
-                <Textarea
+                <textarea 
                   id="message"
-                  placeholder="Tell me about your project or inquiry..."
-                  required
-                  className="w-full min-h-[150px] resize-none"
-                />
+                  rows={4}
+                  className="w-full px-4 py-2 bg-[#050816] border border-gray-700 text-white focus:border-[#00f5ff] focus:outline-none transition-colors resize-none"
+                  placeholder="Tell me about your project..."
+                ></textarea>
               </div>
-
-              <Button type="submit" className="w-full">
+              <button 
+                type="submit"
+                className="w-full px-6 py-3 bg-[#00f5ff] text-[#0a0e27] hover:bg-[#00f5ff]/90 transition-transform duration-200 cyber-glow-cyan hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+              >
                 Send Message
-              </Button>
+              </button>
             </form>
           </div>
-
-          <div className="space-y-8">
-            <div>
-              <h3 className="mb-6">Get in Touch</h3>
-              <p className="text-slate-600 mb-8">
-                Whether you'd like to collaborate, share ideas, or simply connect, I'm always just a message away.
-                Reach out through the form or find me on social media.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 bg-white rounded-xl">
-                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-blue-600" />
-                </div>
-                <div>
-                  <p className="text-slate-500 text-sm">Email</p>
-                  <a 
-                    href="mailto:davidkatunin@gmail.com" 
-                    className="text-slate-900 hover:text-blue-600 transition-colors"
-                  >
-                    davidkatunin@gmail.com
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <p className="text-slate-700 mb-4">Connect with me</p>
-              <div className="flex gap-3">
-                <a
-                  href="https://github.com/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center transition-all hover:scale-110"
-                  aria-label="GitHub"
-                >
-                  <Github className="w-5 h-5 text-slate-700" />
-                </a>
-                <a
-                  href="https://linkedin.com/in/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center transition-all hover:scale-110"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5 text-slate-700" />
-                </a>
-                <a
-                  href="https://instagram.com/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center transition-all hover:scale-110"
-                  aria-label="Instagram"
-                >
-                  <Camera className="w-5 h-5 text-slate-700" />
-                </a>
-              </div>
-            </div>
-
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <span className="text-green-700 text-sm">
-                Available for new projects
-              </span>
-            </div>
-          </div>
         </div>
+      </div>
+      <div className="text-center pt-8 border-t border-gray-800">
+        <p className="text-gray-400">
+          © 2025 David Katunin
+        </p>
       </div>
     </section>
   );

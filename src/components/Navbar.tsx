@@ -1,23 +1,8 @@
 "use client";
 
-import StaggeredMenu from "@/components/StaggeredMenu";
 import { Code2, Camera, Home } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from 'next/link';
-
-const menuItems = [
-  { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-  { label: 'About', ariaLabel: 'Learn about me', link: '/about' },
-  { label: 'Tech', ariaLabel: 'Learn about my swe', link: '/services' },
-  { label: 'Photos', ariaLabel: 'Take a look at my photos', link: '/photography'},
-  { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
-];
-
-const socialItems = [
-  { label: 'GitHub', link: 'https://github.com/davidkatunin' },
-  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/david-katunin-783108197/' },
-  { label: 'Instagram', link: 'https://www.instagram.com/dova.visuals/' },
-];
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -58,20 +43,23 @@ export default function Navbar() {
             <Link href="/photography">Photography</Link>
           </li>
         </ul>
-        <div className="lg:hidden">
-          <StaggeredMenu
-            position="right"
-            items={menuItems}
-            socialItems={socialItems}
-            displaySocials={true}
-            displayItemNumbering={true}
-            menuButtonColor="#000"
-            openMenuButtonColor="#000"
-            changeMenuColorOnOpen={true}
-            colors={['#B19EEF', '#5227FF']}
-            accentColor="#ff6b6b"
-          />
-        </div>
+        <ul className="lg:hidden flex flex-row gap-6 items-center">
+          <li>
+            <Link href="/" className={linkClasses("/")}>
+              <Home className="w-5 h-5"/>
+            </Link>
+          </li>
+          <li>
+            <Link href="/swe" className={linkClasses("/swe")}>
+              <Code2 className="w-5 h-5"/>
+            </Link>
+          </li>
+          <li>
+            <Link href="/photography" className={linkClasses("/photography")}>
+              <Camera className="w-5 h-5"/>
+            </Link>
+          </li>
+        </ul>
       </div>
       <style jsx>{`
         @keyframes glowPulse {
