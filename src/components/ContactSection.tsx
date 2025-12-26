@@ -38,19 +38,22 @@ export function ContactSection() {
               </h4>
               <div className="flex gap-4">
                 <a 
-                  href="#" 
+                  target="_"
+                  href="https://github.com/davidkatunin"
                   className="w-10 h-10 flex items-center justify-center border border-gray-700 hover:border-[#00f5ff] hover:text-[#00f5ff] transition-transform duration-200 hover:scale-105 hover:-translate-y-0.5"
                 >
                   <Github className="w-5 h-5" />
                 </a>
                 <a 
-                  href="#" 
+                  target="_"
+                  href="https://www.linkedin.com/in/david-katunin-783108197/" 
                   className="w-10 h-10 flex items-center justify-center border border-gray-700 hover:border-[#00f5ff] hover:text-[#00f5ff] transition-transform duration-200 hover:scale-105 hover:-translate-y-0.5"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a 
-                  href="#" 
+                  target="_"
+                  href="https://www.instagram.com/dova.visuals/"
                   className="w-10 h-10 flex items-center justify-center border border-gray-700 hover:border-[#00f5ff] hover:text-[#00f5ff] transition-transform duration-200 hover:scale-105 hover:-translate-y-0.5"
                 >
                   <Instagram className="w-5 h-5" />

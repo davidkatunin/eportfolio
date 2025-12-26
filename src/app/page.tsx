@@ -126,7 +126,7 @@ export default function Home() {
             </div>
             <div className="absolute inset-0 overflow-hidden z-0">
               <img
-                src="/portrait.PNG"
+                src="/portrait.png"
                 alt="Portrait of David Katunin"
                 className="w-full h-full object-cover object-center sm:object-contain sm:origin-center sm:scale-95 sm:object-center sm:-translate-x-[20%] sm:translate-y-[6%]"
               />
@@ -500,9 +500,7 @@ export default function Home() {
                     alt={shoot.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
                   <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
                     <span className="inline-block px-3 py-1 text-xs bg-[#ff006e] text-white mb-3">
                       {shoot.category}
@@ -513,7 +511,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                
                 <div className="absolute top-0 left-0 w-full h-1 bg-[#ff006e] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
             ))}
