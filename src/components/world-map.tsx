@@ -277,6 +277,8 @@ export default function WorldMap({
               <Image 
                 src={dots[hoveredDot].data?.image} 
                 alt={dots[hoveredDot].data?.title}
+                width={32}
+                height={32}
                 className="w-8 h-8 rounded-full object-cover flex-shrink-0 border border-black"
                 loading="lazy"
               />

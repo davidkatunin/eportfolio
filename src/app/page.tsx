@@ -84,19 +84,19 @@ const photoshoots = [
   {
     title: 'Cities Gallery',
     description: 'A gallery of my cities and architecture shots across America and Europe',
-    image: './DSC00824.jpg',
+    image: '/images/DSC00824.jpg',
     category: 'Cities & Architecture'
   },
   {
     title: 'Peoples Gallery',
     description: 'A gallery of portraits I have shot of friends and family over the years.',
-    image: './DSC00807.jpg',
+    image: '/images/DSC00807.jpg',
     category: 'People & Portraits'
   },
   {
     title: 'Joninės Gallery',
     description: 'A gallery of my time in Kernavė 2024, during Joninės.',
-    image: './DSC00180.jpg',
+    image: '/images/DSC00180.jpg',
     category: 'Events'
   }
 ];
@@ -121,70 +121,70 @@ export default function Home() {
             WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%)'
           }}
         />
-          <section className="relative flex flex-col justify-between items-center min-h-[100vh] sm:h-[100vh]">
-            <div className="hidden sm:block absolute bottom-0 left-0 z-0 w-full opacity-60">
-              <NameLoop />
-            </div>
-            <div className="absolute inset-0 overflow-hidden z-0">
-              <Image
-                src="/portrait.png"
-                alt="Portrait of David Katunin"
-                className="w-full h-full object-cover object-center sm:object-contain sm:origin-center sm:scale-95 sm:object-center sm:-translate-x-[20%] sm:translate-y-[6%]"
-              />
-            </div>
-            <div className="relative w-full flex-1 flex flex-col justify-center px-4 py-12 sm:absolute sm:inset-y-0 sm:right-0 sm:w-1/2 sm:h-full sm:px-6 sm:py-0 text-white bg-gradient-to-b from-[#0a0e27]/90 via-[#0a0e27]/70 to-[#0a0e27]/90 sm:bg-gradient-to-l sm:from-[#0a0e27]/60 sm:via-[#0a0e27]/30 sm:to-transparent z-10">
-              <div className="relative z-10 max-w-6xl mx-auto w-full sm:px-6 sm:py-20 sm:-translate-y-[90px]">
-                <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-4 sm:mb-6 sm:justify-start">
-                  <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#050816] border border-gray-800">
-                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00f5ff]" />
-                    <span className="text-gray-300 text-xs sm:text-sm">
-                      Based in
-                    </span>
-                  </div>
-                  <FlagBadges />
+        <section className="relative flex flex-col justify-between items-center min-h-[100vh] sm:h-[100vh]">
+          <div className="hidden sm:block absolute bottom-0 left-0 z-0 w-full opacity-60">
+            <NameLoop />
+          </div>
+          <div className="absolute inset-0 overflow-hidden z-0">
+            <Image
+              src="/portrait.png"
+              alt="Portrait of David Katunin"
+              fill
+              className="w-full h-full object-cover object-center sm:object-contain sm:origin-center sm:scale-95 sm:object-center sm:-translate-x-[20%] sm:translate-y-[6%]"
+            />
+          </div>
+          <div className="relative w-full flex-1 flex flex-col justify-center px-4 py-12 sm:absolute sm:inset-y-0 sm:right-0 sm:w-1/2 sm:h-full sm:px-6 sm:py-0 text-white bg-gradient-to-b from-[#0a0e27]/90 via-[#0a0e27]/70 to-[#0a0e27]/90 sm:bg-gradient-to-l sm:from-[#0a0e27]/60 sm:via-[#0a0e27]/30 sm:to-transparent z-10">
+            <div className="relative z-10 max-w-6xl mx-auto w-full sm:px-6 sm:py-20 sm:-translate-y-[90px]">
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-4 sm:mb-6 sm:justify-start">
+                <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#050816] border border-gray-800">
+                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00f5ff]" />
+                  <span className="text-gray-300 text-xs sm:text-sm">
+                    Based in
+                  </span>
                 </div>
-                <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center sm:justify-start">
-                  <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-[#00f5ff]" />
-                  <span className="text-[#00f5ff] tracking-wider uppercase text-xs sm:text-sm text-center sm:text-left">Full Stack Developer & Visual Artist</span>
+                <FlagBadges />
+              </div>
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center sm:justify-start">
+                <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-[#00f5ff]" />
+                <span className="text-[#00f5ff] tracking-wider uppercase text-xs sm:text-sm text-center sm:text-left">Full Stack Developer & Visual Artist</span>
+              </div>
+              <h1 className="mb-4 sm:mb-6 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-center sm:text-left">
+                <span className="block text-white">Hi, I&apos;m</span>
+                <span className="block text-glow-cyan text-[#00f5ff] glitch-text">David Katunin</span>
+              </h1>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-3xl text-center sm:text-left mx-auto sm:mx-0">
+                Building the future with code and capturing moments through the lens. 
+                Specializing in full-stack development, AI/ML, and cyberpunk aesthetics.
+              </p>
+              <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center sm:justify-start">
+                <div className="flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 bg-[#050816] border border-[#00f5ff]/30 rounded cyber-glow-cyan">
+                  <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#00f5ff]" />
+                  <span className="text-sm sm:text-base text-[#00f5ff]">Software Engineer</span>
                 </div>
-                <h1 className="mb-4 sm:mb-6 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-center sm:text-left">
-                  <span className="block text-white">Hi, I&apos;m</span>
-                  <span className="block text-glow-cyan text-[#00f5ff] glitch-text">David Katunin</span>
-                </h1>
-                <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-3xl text-center sm:text-left mx-auto sm:mx-0">
-                  Building the future with code and capturing moments through the lens. 
-                  Specializing in full-stack development, AI/ML, and cyberpunk aesthetics.
-                </p>
-                <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center sm:justify-start">
-                  <div className="flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 bg-[#050816] border border-[#00f5ff]/30 rounded cyber-glow-cyan">
-                    <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#00f5ff]" />
-                    <span className="text-sm sm:text-base text-[#00f5ff]">Software Engineer</span>
-                  </div>
-                  <div className="flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 bg-[#050816] border border-[#ff006e]/30 rounded cyber-glow-pink">
-                    <Camera className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff006e]" />
-                    <span className="text-sm sm:text-base text-[#ff006e]">Photographer</span>
-                  </div>
-                </div>
-                <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center sm:justify-start">
-                  <a 
-                    href="#projects" 
-                    className="px-6 py-2.5 sm:px-8 sm:py-3 bg-[#00f5ff] text-[#0a0e27] hover:bg-[#00f5ff]/90 transition-all duration-300 cyber-glow-cyan text-center text-sm sm:text-base font-medium"
-                  >
-                    View Projects
-                  </a>
-                  <a 
-                    href="#contact" 
-                    className="px-6 py-2.5 sm:px-8 sm:py-3 bg-[#050816] text-[#00f5ff] border border-[#00f5ff]/30 hover:text-[#0a0e27] hover:bg-[#00f5ff]/90 transition-all duration-300 cyber-glow-cyan text-center text-sm sm:text-base font-medium"
-                  >
-                    Get In Touch
-                  </a>
+                <div className="flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 bg-[#050816] border border-[#ff006e]/30 rounded cyber-glow-pink">
+                  <Camera className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff006e]" />
+                  <span className="text-sm sm:text-base text-[#ff006e]">Photographer</span>
                 </div>
               </div>
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center sm:justify-start">
+                <a 
+                  href="#projects" 
+                  className="px-6 py-2.5 sm:px-8 sm:py-3 bg-[#00f5ff] text-[#0a0e27] hover:bg-[#00f5ff]/90 transition-all duration-300 cyber-glow-cyan text-center text-sm sm:text-base font-medium"
+                >
+                  View Projects
+                </a>
+                <a 
+                  href="#contact" 
+                  className="px-6 py-2.5 sm:px-8 sm:py-3 bg-[#050816] text-[#00f5ff] border border-[#00f5ff]/30 hover:text-[#0a0e27] hover:bg-[#00f5ff]/90 transition-all duration-300 cyber-glow-cyan text-center text-sm sm:text-base font-medium"
+                >
+                  Get In Touch
+                </a>
+              </div>
             </div>
-            <ScrollDownArrow />
-          </section>
-        </div>
-      <div/>
+          </div>
+          <ScrollDownArrow />
+        </section>
+      </div>
       <section className="pt-20 mb-20 w-full items-center bg-[#121838]">
         <motion.div
           className="fixed inset-0 pointer-events-none z-30"
@@ -219,8 +219,8 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div className="">
                       <div className="flex flex-row gap-5">
-                        <Image src={exp.logo} alt="" className="w-14 h-14" />
-                        <div className="">
+                        <Image src={exp.logo} alt="" width={56} height={56} className="w-14 h-14" />
+                        <div>
                           <h3 className="text-white mb-2">{exp.title}</h3>
                           <h4 className="text-[#00f5ff] mb-2">{exp.company}</h4>
                         </div>
@@ -337,6 +337,7 @@ export default function Home() {
                   <Image
                     src={project.image} 
                     alt={project.title}
+                    fill
                     className={`w-full h-full object-cover transition-transform duration-500 ${project.comingSoon ? '' : 'group-hover:scale-110'}`}
                     style={project.comingSoon ? { filter: 'grayscale(30%) blur(2px)' } : {}}
                   />
@@ -422,6 +423,7 @@ export default function Home() {
                   <Image 
                     src={project.image} 
                     alt={project.title}
+                    fill
                     className={`w-full h-full object-cover transition-transform duration-500 ${project.comingSoon ? '' : 'group-hover:scale-110'}`}
                     style={project.comingSoon ? { filter: 'grayscale(30%) blur(2px)' } : {}}
                   />
@@ -499,6 +501,7 @@ export default function Home() {
                   <Image 
                     src={shoot.image} 
                     alt={shoot.title}
+                    fill
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
